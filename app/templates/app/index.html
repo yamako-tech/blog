@@ -1,0 +1,73 @@
+{% extends "app/base.html" %}
+
+{% block content %}
+
+
+<div class="row my-4">
+    <div class="col-md-8">
+        {% if keyword %}
+        <h4 class="mb-4">「The result of: {{ keyword }}」</h4>
+        {% endif %}
+        {% for post in post_data %}
+        <div class="card mb-4">
+            {% if post.image %}
+                <img src="{{ post.image.url }}" alt="" class="card-img-top index-img">
+            {% endif %}
+            <div class="card-body">
+                <h2 class="card-title">{{ post.title }}<span class="small"> - {{ post.category }}</span></h2>
+                <p class="card-text">{{ post.content|truncatechars:100 }}</p>
+                <div class="btn btn-warning">detail</div>
+            </div>
+            <div class="card-footer text-muted">
+                {{ post.created|date }} by {{ post.author }}
+            </div>
+            <a href="{% url 'post_detail' post.id %}" class="stretched-link"></a>
+        </div>
+        {% endfor %}
+    </div>
+        
+    <div class="col-md-4">
+        <div class="card">
+            <h5 class="card-header">About us</h5>
+            <div class="card-body">
+                <p>One on one online-lesson available at ASK-Honko</p>
+                <a href="https://ask946.com/">CLICK HERE for ASK-HONKO</a>
+                <div class="mb-0">
+                    We are a language school with a history of over 20 years in Hokkaido.
+                </div>
+            </div>
+        </div>
+
+        <div class="card my-4">
+            <h5 class="card-header">category</h5>
+                <div class="card-body">
+                    <div class="row">
+                        {% for category in category_data %}
+                            <div class="col-md-6">
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <a href="{% url 'category' category %}">
+                                            {{ category.name }}
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </h5>
+        </div>
+
+        <div class="card my-4">
+            <h5 class="card-header">Search</h5>
+            <div class="card-body">
+                <form method="get" action="{% url 'search' %}" class="input-group">
+                    <input type="text" class="form-control" name="keyword" placeholder="Search lesson...">
+                    <button class="btn btn-warning ml-2" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
