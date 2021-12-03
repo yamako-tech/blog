@@ -8,6 +8,7 @@
 4. Only admin can create posts by logging in (no registration function)
 
 ## Basic Setup
+[Click here for the turtorial with codes and images](https://www.askdjapy.com/django-blog-site/)
 1. Create Blog folder Go to the folder
 ```python:shell
 mkdir blog
@@ -81,5 +82,7 @@ python3 startapp app
 11. Once you've written the code you need for your app, it's time to create a book app and follow the same steps.
 
 12. When adding or changing 'models.py', be sure to make migration and migrate.
+
+13. When deploying, save information such as private keys and passwords in environment variables and save them in your local environment.
 
 
