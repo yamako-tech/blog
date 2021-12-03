@@ -5,6 +5,12 @@
 
 <div class="row my-4">
     <div class="col-md-8">
+        <h1>Enjoy learning Japanese and cultures</h1>
+        <div class="col-my-4">
+            <iframe width="100%" height="auto" src="https://www.youtube.com/embed/videoseries?list=PL1TKyoLbKRjQS3cD7SFdJA4mUrn83UkjG" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <br />
+        <h1>For those who want to work in Japan</h1>
         {% if keyword %}
         <h4 class="mb-4">「The result of: {{ keyword }}」</h4>
         {% endif %}
@@ -25,7 +31,7 @@
         </div>
         {% endfor %}
     </div>
-        
+
     <div class="col-md-4">
         <div class="card">
             <h5 class="card-header">About us</h5>
@@ -62,7 +68,7 @@
             <h5 class="card-header">Search</h5>
             <div class="card-body">
                 <form method="get" action="{% url 'search' %}" class="input-group">
-                    <input type="text" class="form-control" name="keyword" placeholder="Search lesson...">
+                    <input type="text" class="form-control" name="keyword" placeholder="Search blog...">
                     <button class="btn btn-warning ml-2" type="submit">Search</button>
                 </form>
             </div>

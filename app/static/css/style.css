@@ -70,3 +70,9 @@ a:hover {
     text-decoration: none;
     color: orange;
 }
+
+.booklist img {
+    height: 200px;
+    object-fit: contain;
+}
+

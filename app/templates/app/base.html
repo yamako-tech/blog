@@ -23,7 +23,10 @@
                     <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/">Contact</a>
+                    <a class="nav-link" href="{% url 'book_booksearch' %}">Books</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'video' %}">Video</a>
                 </li>
                 {% if user.is_authenticated %}
                     <li class="nav-item">

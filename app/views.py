@@ -1,14 +1,23 @@
+
 from django.shortcuts import render, redirect
 from django.views.generic import View
 from .models import Post, Category
-from .forms import PostForm
+from .forms import PostForm, BookSearchForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Q
 from functools import reduce
 from operator import and_
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from .models import Item
 
 
+
+class VideoView(View):
+    def get(self, request, *args, **kwargs):
+        obj=Item.objects.order_by('-id')    
+        return render(request, 'app/video.html', {
+            'obj': obj
+        })
 
 class IndexView(View):
     def get(self, request, *args, **kwargs):
@@ -132,4 +141,6 @@ class SearchView(View):
             'keyword': keyword,
             'post_data': post_data
         })
+
+
 

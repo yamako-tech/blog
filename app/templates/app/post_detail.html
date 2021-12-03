@@ -2,6 +2,12 @@
 
 {% block content %}
 
+<style> 
+    .text {
+        font-size: 16px;
+    }
+</style>
+
 <h2 class="my-4">{{ post_data.title }}</h2>
 <p>{{ post_data.category }}</p>
 <hr>
@@ -11,7 +17,7 @@
     <img src="{{ post_data.image.url }}" alt="" class="rounded detail-img">
     <hr>
 {% endif %}
-<p>{{ post_data.content|linebreaksbr }}</p>
+<p class="text">{{ post_data.content|linebreaksbr }}</p>
 {% if user.is_authenticated %}
     <hr>
     <div class="d-flex mb-5">

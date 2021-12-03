@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import environ
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -33,12 +34,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'widget_tweaks',
-    'app',   
+    'app', 
+    'book',
     'accounts',
     'django.contrib.sites',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+
+    'embed_video',
 ]
 
 MIDDLEWARE = [
@@ -135,7 +139,7 @@ except ImportError:
 if DEBUG:
     ALLOWED_HOSTS = ['*']
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-    MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 else:
     import environ
     env = environ.Env()
