@@ -7,6 +7,14 @@
 3. Embed YouTube video in specified size
 4. Only admin can create posts by logging in (no registration function)
 
+### ⭐Login and Create a blog
+![giphy](https://user-images.githubusercontent.com/58015893/144588548-7d43dee9-df6c-4c07-8446-177fc3a0f14a.gif)
+
+### ⭐Book search and order API (Rakuten)
+![django-book](https://user-images.githubusercontent.com/58015893/144588795-05623436-4085-4879-be7a-ca6cae99d551.gif)
+
+### ⭐Category and Search Blog
+![django-category-search](https://user-images.githubusercontent.com/58015893/144588853-d26c694a-3db9-40f4-958d-c78561155a5e.gif)
 ## Basic Setup
 [Click here for the turtorial with codes and images](https://www.askdjapy.com/django-blog-site/)
 1. Create Blog folder Go to the folder
